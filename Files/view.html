@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Note — NOTHEJAS</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js"></script>
+
+<style>
+  :root {
+    --background: #1e1e1e;
+    --text: #d4d4d4;
+    --muted: #777777;
+    --purple: #c65cff;
+    --line: #2a2a2a;
+    --code-bg: #262626;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: "JetBrains Mono", "Fira Code", "Cascadia Code",
+                 "SFMono-Regular", Consolas, monospace;
+    display: flex;
+    justify-content: center;
+  }
+  .note {
+    width: min(100%, 900px);
+    padding: 90px 8%;
+    line-height: 1.7;
+    font-size: 18px;
+  }
+  a.back {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 16px;
+  }
+  a.back:hover { color: var(--purple); }
+
+  h1, h2, h3 { color: var(--purple); line-height: 1.3; }
+  h1 { font-size: 2em; margin-top: 40px; }
+  h2 { font-size: 1.5em; margin-top: 36px; }
+  h3 { font-size: 1.2em; margin-top: 28px; }
+
+  a { color: var(--purple); }
+
+  code {
+    background: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  pre code { background: none; padding: 0; }
+
+  blockquote {
+    border-left: 3px solid var(--purple);
+    margin: 20px 0;
+    padding: 4px 20px;
+    color: var(--muted);
+  }
+
+  hr { border: none; border-top: 1px solid var(--line); margin: 30px 0; }
+
+  ul, ol { padding-left: 24px; }
+
+  #status { color: var(--muted); }
+</style>
+</head>
+<body>
+  <article class="note">
+    <a class="back" href="./">&larr; back to Files</a>
+    <div id="content"><p id="status">Loading…</p></div>
+  </article>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("file");
+    const contentEl = document.getElementById("content");
+
+    if (!file) {
+      contentEl.innerHTML = "<p id='status'>No file specified. Use view.html?file=yourfile.md</p>";
+    } else {
+      fetch(file)
+        .then(res => {
+          if (!res.ok) throw new Error("File not found: " + file);
+          return res.text();
+        })
+        .then(text => {
+          contentEl.innerHTML = marked.parse(text);
+        })
+        .catch(err => {
+          contentEl.innerHTML = "<p id='status'>Couldn't load '" + file + "'. Check the filename matches exactly.</p>";
+        });
+    }
+  </script>
+</body>
+</html>
