@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOTHEJAS' Website</title>
+
+  <style>
+    :root {
+      --background: #1e1e1e;
+      --text: #d4d4d4;
+      --muted: #777777;
+      --purple: #c65cff;
+      --line: #2a2a2a;
+      --sidebar: #181818;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--background);
+      color: var(--text);
+      font-family: "JetBrains Mono", "Fira Code", "Cascadia Code",
+                   "SFMono-Regular", Consolas, monospace;
+    }
+
+    .app {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 260px;
+      background: var(--sidebar);
+      border-right: 1px solid var(--line);
+      padding: 24px 16px;
+      display: none;
+      flex-direction: column;
+    }
+
+    .vault-name {
+      color: var(--purple);
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 28px;
+    }
+
+    .folder {
+      color: #aaa;
+      padding: 8px 10px;
+      border-radius: 5px;
+    }
+
+    .file {
+      color: #ddd;
+      padding: 8px 10px 8px 28px;
+    }
+
+    .workspace {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .note {
+      width: min(100%, 1500px);
+      padding: 135px 9%;
+    }
+
+    h1 {
+      margin: 0 0 55px;
+      color: var(--purple);
+      font-size: clamp(42px, 4vw, 58px);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    .intro {
+      max-width: 1250px;
+      margin: 0 0 60px;
+      font-size: clamp(22px, 2vw, 32px);
+      line-height: 1.65;
+      letter-spacing: 0.5px;
+    }
+
+    .links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: clamp(22px, 2vw, 32px);
+      line-height: 1.8;
+    }
+
+    .links li {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .number {
+      width: 64px;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .link {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .link:hover {
+      color: var(--purple);
+    }
+
+    .status-bar {
+      position: fixed;
+      right: 18px;
+      bottom: 12px;
+      color: #666;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 700px) {
+      .note {
+        padding: 70px 7%;
+      }
+
+      h1 {
+        margin-bottom: 35px;
+      }
+
+      .intro {
+        margin-bottom: 40px;
+      }
+
+      .number {
+        width: 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="vault-name">NOTHEJAS</div>
+      <div class="folder">▾ Website</div>
+      <div class="file">index.md</div>
+      <div class="file">projects.md</div>
+      <div class="file">files.md</div>
+      <div class="file">writeups.md</div>
+    </aside>
+
+    <main class="workspace">
+      <article class="note">
+
+        <h1>NOTHEJAS' Website</h1>
+
+        <p class="intro">
+          Here is where I will host my project ideas, Thoughts, and academic stuff.
+        </p>
+
+        <ol class="links">
+          <li>
+            <span class="number">1.</span>
+            <a class="link" href="Projects/">Projects</a>
+          </li>
+
+          <li>
+            <span class="number">2.</span>
+            <a class="link" href="Files/">Files</a>
+          </li>
+
+          <li>
+            <span class="number">3.</span>
+            <a class="link" href="writeups/">writeups</a>
+          </li>
+        </ol>
+
+      </article>
+    </main>
+  </div>
+
+  <div class="status-bar">NOTHEJAS • index.md</div>
+
+</body>
+</html>
