@@ -41,7 +41,7 @@
 
 2. <span style="color:rgb(150, 100, 100)">MODULE 3</span>: Computer Organisation:CPU, Memory and I/O devices – Commonly used peripherals.Role of the CPU, Memory and I/O devices in the context of solving a problem.
 
-3. <span style="color:rgb(150, 100, 100)">MODULE 5</span>: Introduction to Programming In C:Idea of High level, Assembly level & M/c level language.Interpretation and compilation.Variables and data types (basic), simple programs,assignment, decision, loops, scope: Global & local,control structure ( if, if-else, switch, for, while, do while, break and continue)Structural data type (Array, record, file, set etc.), Function,Recursion, Pointers,Introduction to dynamic data structure.
+3. <span style="color:rgb(150, 100, 100)">MODULE 5</span>: Introduction to Programming In C:Idea of High level, Assembly level & M/c level language.Interpretation and compilation.Variables and data types (basic), simple programs,assignment, decision, loops, scope: Global & local,control structure ( if, if-else, switch, for, while, do while, break and continue)Structural data type (Array, record, file, set etc.)
 
 
 # [<span style="color:rgb(200,0, 255)">Professional Communication in English (HU1101N)</span>](https://drive.google.com/drive/folders/1ecGmqZ9BIQRlv-UIHtYT_YW2C2Mq1P6G?usp=drive_link)
