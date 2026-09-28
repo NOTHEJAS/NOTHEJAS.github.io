@@ -1,8 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Files — NOTHEJAS</title>
 
   <style>
@@ -13,15 +15,25 @@
       --purple: #c65cff;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       min-height: 100vh;
+
       background: var(--background);
       color: var(--text);
-      font-family: "JetBrains Mono", "Fira Code", "Cascadia Code",
-                   "SFMono-Regular", Consolas, monospace;
+
+      font-family:
+        "JetBrains Mono",
+        "Fira Code",
+        "Cascadia Code",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
       display: flex;
       justify-content: center;
     }
@@ -31,34 +43,48 @@
       padding: 100px 8%;
     }
 
+    /* Back button */
     a.back {
       color: var(--muted);
       text-decoration: none;
       font-size: 18px;
     }
-    a.back:hover { color: var(--purple); }
 
+    a.back:hover {
+      color: var(--purple);
+    }
+
+    /* Page title */
     h1 {
       margin: 30px 0 50px;
+
       color: var(--purple);
+
       font-size: clamp(36px, 4vw, 50px);
       letter-spacing: -1px;
     }
 
+    /* File list */
     ul.files {
       list-style: none;
       padding: 0;
       margin: 0;
+
       font-size: clamp(18px, 1.6vw, 24px);
       line-height: 2.1;
     }
 
+    /* File links */
     .file-link {
       color: var(--text);
       text-decoration: none;
     }
-    .file-link:hover { color: var(--purple); }
 
+    .file-link:hover {
+      color: var(--purple);
+    }
+
+    /* File extension */
     .tag {
       color: var(--muted);
       font-size: 0.7em;
@@ -66,29 +92,42 @@
     }
   </style>
 </head>
+
 <body>
+
   <article class="note">
+
     <a class="back" href="../">&larr; back</a>
+
     <h1>Files</h1>
 
-    
     <ul class="files">
-  <li>
-    <a class="file-link" href="view.html?file=syllabus.md">
-      syllabus.md
-    </a>
-    <span class="tag">.md</span>
-  </li>
 
-  <li>
-    <a class="file-link" href="view.html?file=sihdihdihsidsihdih.md">
-      sihdihdihsidsihdih.md
-    </a>
-    <span class="tag">.md</span>
-  </li>
-</ul>
-      
+      <li>
+        <a
+          class="file-link"
+          href="view.html?file=syllabus.md"
+        >
+          syllabus.md
+        </a>
+        <span class="tag">.md</span>
+      </li>
+
+      <li>
+        <a
+          class="file-link"
+          href="view.html?file=sihdihdihsidsihdih.md"
+        >
+          sihdihdihsidsihdih.md
+        </a>
+        <span class="tag">.md</span>
+      </li>
+
     </ul>
+
   </article>
+
 </body>
 </html>
+```
+
